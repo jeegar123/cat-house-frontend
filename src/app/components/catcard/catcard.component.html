@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-header>
+      <mat-card-title>{{cat.catName}}</mat-card-title>
+      <mat-card-subtitle>{{cat.catBreed}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="assets\zadio.jpg" alt="zadio photo" width="200" height="100">
+  <mat-card-content>
+    {{cat.catDetails.substring(0,50)}}....
+  </mat-card-content>
+  <mat-card-actions>
+      <button mat-button class="btn btn-primary" >Add to cart</button>
+      <button mat-button class="btn btn-danger" [routerLink]="['/catdetails',cat.catId]" routerLinkActive="router-link-active" >Cat Details</button>
+  </mat-card-actions>
+</mat-card>

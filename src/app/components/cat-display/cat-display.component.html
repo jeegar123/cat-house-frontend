@@ -1,0 +1,5 @@
+<mat-grid-list cols="2" rowHeight="1.5:1">
+    <mat-grid-tile *ngFor="let catData of cats">
+        <catcard [cat]="catData"></catcard>
+    </mat-grid-tile>
+</mat-grid-list>
