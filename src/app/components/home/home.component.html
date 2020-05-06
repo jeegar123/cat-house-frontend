@@ -5,8 +5,12 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Home</a>
-      <a mat-list-item href="#">Profile</a>
+      <a mat-list-item [routerLink]="['']" routerLinkActive="router-link-active" >Home</a>
+      <a mat-list-item href="#">Profile</a>    
+      <hr>
+      <div mat-list-item style="font-weight: 400; color: blue;" class="ml-3"> Popular Cats</div>
+      <a mat-list-item href="#">Bengal Cat</a>    
+      <a mat-list-item href="#">American Curl Cat Breedt</a>            
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -18,8 +22,11 @@
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>Welcome,to cat shop</span>
+      </button>    
+      <span>Welcome,adopt cat not a shop</span>
+  
+        <input  type="search" class="ml-auto justify-content-end border-0"  placeholder="Search cats by breed">
+        <button mat-raised-button class="btn btn-primary">Search</button>
     </mat-toolbar>
 
     <!-- main content -->
