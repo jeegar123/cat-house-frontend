@@ -9,7 +9,7 @@ import { Cat } from 'src/app/common/cat';
   styleUrls: ['./cat-details.component.css']
 })
 export class CatDetailsComponent implements OnInit {
-  cat:Cat;
+  cat:Cat=new Cat();
   constructor(private route:ActivatedRoute,private cateService:CatService) { }
 
   ngOnInit(): void {

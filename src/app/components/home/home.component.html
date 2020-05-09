@@ -1,36 +1,28 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="['']" routerLinkActive="router-link-active" >Home</a>
-      <a mat-list-item href="#">Profile</a>    
+      <a mat-list-item [routerLink]="['']" routerLinkActive="router-link-active">Home</a>
+      <a mat-list-item href="#">Profile</a>
       <hr>
       <div mat-list-item style="font-weight: 400; color: blue;" class="ml-3"> Popular Cats</div>
-      <a mat-list-item href="#">Bengal Cat</a>    
-      <a mat-list-item href="#">American Curl Cat Breedt</a>            
+      <a mat-list-item href="#">Bengal Cat</a>
+      <a mat-list-item href="#">American Curl Cat Breedt</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>    
-      <span>Welcome,adopt cat not a shop</span>
-  
-        <input  type="search" class="ml-auto justify-content-end border-0"  placeholder="Search cats by breed">
-        <button mat-raised-button class="btn btn-primary">Search</button>
+      </button>
+      <span>Welcome,To Cat Home</span>
+      <app-search class="ml-auto justify-content-end"></app-search>
     </mat-toolbar>
 
     <!-- main content -->
     <router-outlet></router-outlet>
-    
+
   </mat-sidenav-content>
 </mat-sidenav-container>

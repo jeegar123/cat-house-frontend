@@ -3,3 +3,6 @@
         <catcard [cat]="catData"></catcard>
     </mat-grid-tile>
 </mat-grid-list>
+
+<!-- if list is empty -->
+<not-found *ngIf="cats.length==0"></not-found>

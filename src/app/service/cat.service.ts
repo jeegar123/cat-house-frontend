@@ -19,12 +19,17 @@ export class CatService {
   }
 
   getCatById(id:number):Observable<Cat>{
-    return this.http.get<Cat>(this.catUrl+"/"+id)
-    .pipe(
-      tap(_ => console.log("done")
-      )
-    );
- 
+    return this.http.get<Cat>(this.catUrl+"/"+id);
   }
 
+  getCatByBreed(breed:string):Observable<Cat[]>{
+    return this.http.get<Cat[]>(this.catUrl+"/search/findbybreed/breed="+breed);
+ }
+
 }
+
+// interface ResponseData{
+//   _embedded :{
+//     cat:Cat[]
+//   }
+// }
