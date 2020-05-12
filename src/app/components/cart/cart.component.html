@@ -1,0 +1,38 @@
+<ng-container *ngIf="this.cats.length!=0; else elseTemplate">
+    <table class="table-bordered container-fluid text-center">
+        <thead class="thead-dark">
+            <tr>
+                <td>Cat Name</td>
+                <td>Cat Breed</td>
+                <td>Cat Price</td>
+                <td>Remove</td>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let cat of cats">
+                <td>{{cat.catName}}</td>
+                <td>{{cat.catBreed}}</td>
+                <td><button class="w-100 btn-outline-danger" (click)="removeValueFromCart(cat)">Remove from cart</button></td>
+                <td>{{cat.price | currency}}</td>
+                
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="bg-danger" style="color: aliceblue;">{{total | currency}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</ng-container>
+
+<ng-template #elseTemplate>
+    
+<div #empty class="alert-warning">
+    Sorry u didnt purchase any item yet
+</div>
+</ng-template>
+

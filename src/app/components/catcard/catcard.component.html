@@ -8,7 +8,8 @@
     {{cat.catDetails.substring(0,50)}}....
   </mat-card-content>
   <mat-card-actions>
-      <button mat-button class="btn btn-primary" >Add to cart</button>
+    <p>{{cat.price |currency}}</p>
+      <button mat-button class="btn btn-primary" (click)="addToCart(cat)" >Add to cart</button>
       <button mat-button class="btn btn-danger" [routerLink]="['/catdetails',cat.catId]" routerLinkActive="router-link-active" >Cat Details</button>
   </mat-card-actions>
 </mat-card>
