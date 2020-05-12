@@ -1,3 +1,4 @@
+import { CartService } from './../../service/cart.service';
 import { Cat } from './../../common/cat';
 
 import { Component, OnInit, Input } from '@angular/core';
@@ -12,11 +13,19 @@ export class CatcardComponent implements OnInit {
   @Input()cat:Cat
 
 
-  constructor() { }
+  constructor(private service:CartService) { }
 
   ngOnInit(){
 
   }
 
+  addToCart(cat:Cat){
+    this.service.addItem(cat);
+    console.log("item added");
+    
+    console.log(this.service.getTotalPrice());
+    
+    
+  }
 
 }

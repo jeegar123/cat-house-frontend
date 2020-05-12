@@ -7,6 +7,7 @@ export class Cat {
     catWeight:number;
     catAge:number;
     catDetails:string;
+    price:number;
     catColor:string;
     catPhoto:any;
     createdDate:Date;

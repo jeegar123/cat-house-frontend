@@ -24,12 +24,15 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { SearchComponent } from './components/search/search.component';
 import { CatService } from './service/cat.service';
+import { CartService } from './service/cart.service';
+import { CartComponent } from './components/cart/cart.component';
 
 
 const routes:Routes=[
   {path:"",component:CatDisplayComponent},  
   {path:"search/:breed",component:CatDisplayComponent},  
   {path:"catdetails/:id",component:CatDetailsComponent},
+  {path:"cart",component:CartComponent},
   {path:"**",component:NotFoundComponent}
 ];
 
@@ -43,7 +46,8 @@ const routes:Routes=[
     NotFoundComponent,
     CatDetailsComponent,
     CatDisplayComponent,
-    SearchComponent
+    SearchComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +68,7 @@ const routes:Routes=[
     
     
   ],
-  providers: [CatService],
+  providers: [CatService,CartService],
   bootstrap: [AppComponent,RouterModule]
 })
 export class AppModule { }
