@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node init && ng serve",
+    "build": "node init && ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -15,7 +15,7 @@
     "@angular/cdk": "^9.2.2",
     "@angular/common": "~9.1.0",
     "@angular/compiler": "~9.1.0",
-    "@angular/core": "~9.1.0",
+    "@angular/core": "~10.2.5",
     "@angular/forms": "~9.1.0",
     "@angular/localize": "~9.1.0",
     "@angular/material": "^9.2.2",
